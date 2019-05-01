@@ -15,28 +15,28 @@ var mongoManager = (function () {
 		let keystr = encodeURIComponent(key.toString());
 		let xhr = new XMLHttpRequest();
 		xhr.open('GET', '/tasks/' + keystr, false);
-	//	console.log(keystr);
             	xhr.send()
-	//	console.log(JSON.parse(xhr.responseTest));
                 return xhr.responseText;
         },
         
         refactorElem: function (oldKey, newKey, newValue) {
             let oldID = JSON.parse(mongoManager.getOneElem(oldKey));
             let newElem = JSON.parse(newValue);
-            newElem.id = oldID.id;
-            $.post('/tasks/' + encodeURIComponent(oldID.taskName) + '/edit', newElem);
+            newElem.oldTaskName = oldID.taskName;
+            $.post('/tasks/' + encodeURIComponent(newElem.oldTaskName) + '/edit', newElem);
         },
 
         completeElem: {
             complete: function (key) {
                 let elem = JSON.parse(mongoManager.getOneElem(key));
                 elem.taskIsComplete = "true";
+		    elem.oldTaskName = elem.taskName;
                 $.post('/tasks/' + encodeURIComponent(elem.taskName) + '/edit', elem);
             },
             inProgress: function (key) {
                 let elem = JSON.parse(mongoManager.getOneElem(key));
                 elem.taskIsComplete = "false";
+		    elem.oldTaskName = elem.taskName;
                 $.post('/tasks/' + encodeURIComponent(elem.taskName) + '/edit', elem);
             }
         },
@@ -47,7 +47,6 @@ var mongoManager = (function () {
 		xhr.open('GET', '/tasks/delete/' + encodeURIComponent(elem.taskName), elem.taskName, false);
 		xhr.send();
 
-           // $.get('/tasks/delete/' + elem.taskName, elem.taskName);
         }
 
     }

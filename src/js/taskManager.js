@@ -27,7 +27,6 @@ var taskManager = (function () {
         del: function () {
             if (confirm("Вы действительно хотите удалить задачу " + this + "?")) {
                 document.getElementById(this).remove();
-		    console.log(this);
                 mongoManager.delElem(this)
             }
         },
