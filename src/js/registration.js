@@ -59,16 +59,6 @@ $(document)
                         ],
                     },
 
-                    terms: {
-                        identifier: 'terms',
-                        rules: [
-                            {
-                                type   : 'checked',
-                                prompt : 'Подтвердите согласие на обработку данных'
-                            }
-                        ]
-                    },
-
                     love1: {
                         identifier: 'love1',
                         rules: [
@@ -93,6 +83,16 @@ $(document)
                             {
                                 type   : 'checked',
                                 prompt : 'А как же Никита?'
+                            }
+                        ]
+                    },
+
+                    terms: {
+                        identifier: 'terms',
+                        rules: [
+                            {
+                                type   : 'checked',
+                                prompt : 'Подтвердите согласие на обработку данных'
                             }
                         ]
                     },
