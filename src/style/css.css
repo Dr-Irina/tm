@@ -31,6 +31,10 @@ img {
 .bord {
     margin: 1rem 0;
 }
+
+.header.vertcenter {
+    vertical-align: middle;
+}
 /*.completed {*/
 /*    color: gray;*/
 /*    text-decoration: line-through;*/
