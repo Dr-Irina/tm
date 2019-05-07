@@ -31,34 +31,3 @@ img {
 .bord {
     margin: 1rem 0;
 }
-
-.header.vertcenter {
-    vertical-align: middle;
-}
-/*.completed {*/
-/*    color: gray;*/
-/*    text-decoration: line-through;*/
-/*}*/
-/*.inProgress, .completed {*/
-/*    display: flex;*/
-/*    -ms-flex-wrap: wrap;*/
-/*    flex-wrap: wrap;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    justify-content: flex-start;*/
-/*}*/
-/*.red {*/
-/*    background-color: green;*/
-/*}*/
-
-/*.yellow {*/
-/*    background-color: yellow;*/
-/*}*/
-
-/*.add:after {*/
-/*    content: "Добавить";*/
-/*}*/
-
-/*.set:after {*/
-/*    content: "Изменить";*/
-/*}*/
